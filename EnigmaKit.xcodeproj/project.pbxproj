@@ -10,6 +10,13 @@
 		3659FDF21DF19B2000D84C33 /* EnigmaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3659FDE81DF19B2000D84C33 /* EnigmaKit.framework */; };
 		3659FDF71DF19B2000D84C33 /* EnigmaKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659FDF61DF19B2000D84C33 /* EnigmaKitTests.swift */; };
 		3659FDF91DF19B2000D84C33 /* EnigmaKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3659FDEB1DF19B2000D84C33 /* EnigmaKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3659FE031DF19B5700D84C33 /* Encryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659FE021DF19B5700D84C33 /* Encryptor.swift */; };
+		3659FE051DF19E4500D84C33 /* Enigma.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659FE041DF19E4500D84C33 /* Enigma.swift */; };
+		3659FE071DF1A2AF00D84C33 /* Substitutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659FE061DF1A2AF00D84C33 /* Substitutor.swift */; };
+		3659FE091DF1AB4D00D84C33 /* Rotor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659FE081DF1AB4D00D84C33 /* Rotor.swift */; };
+		3659FE0B1DF1ADE500D84C33 /* RotorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659FE0A1DF1ADE500D84C33 /* RotorTests.swift */; };
+		3659FE0D1DF1B1FD00D84C33 /* RotorArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659FE0C1DF1B1FD00D84C33 /* RotorArray.swift */; };
+		3659FE0F1DF1C3AC00D84C33 /* RotorArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659FE0E1DF1C3AC00D84C33 /* RotorArrayTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,13 @@
 		3659FDF11DF19B2000D84C33 /* EnigmaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EnigmaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3659FDF61DF19B2000D84C33 /* EnigmaKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnigmaKitTests.swift; sourceTree = "<group>"; };
 		3659FDF81DF19B2000D84C33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3659FE021DF19B5700D84C33 /* Encryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encryptor.swift; sourceTree = "<group>"; };
+		3659FE041DF19E4500D84C33 /* Enigma.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enigma.swift; sourceTree = "<group>"; };
+		3659FE061DF1A2AF00D84C33 /* Substitutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Substitutor.swift; sourceTree = "<group>"; };
+		3659FE081DF1AB4D00D84C33 /* Rotor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotor.swift; sourceTree = "<group>"; };
+		3659FE0A1DF1ADE500D84C33 /* RotorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotorTests.swift; sourceTree = "<group>"; };
+		3659FE0C1DF1B1FD00D84C33 /* RotorArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotorArray.swift; sourceTree = "<group>"; };
+		3659FE0E1DF1C3AC00D84C33 /* RotorArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotorArrayTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +87,11 @@
 			children = (
 				3659FDEB1DF19B2000D84C33 /* EnigmaKit.h */,
 				3659FDEC1DF19B2000D84C33 /* Info.plist */,
+				3659FE021DF19B5700D84C33 /* Encryptor.swift */,
+				3659FE041DF19E4500D84C33 /* Enigma.swift */,
+				3659FE061DF1A2AF00D84C33 /* Substitutor.swift */,
+				3659FE081DF1AB4D00D84C33 /* Rotor.swift */,
+				3659FE0C1DF1B1FD00D84C33 /* RotorArray.swift */,
 			);
 			path = EnigmaKit;
 			sourceTree = "<group>";
@@ -82,6 +101,8 @@
 			children = (
 				3659FDF61DF19B2000D84C33 /* EnigmaKitTests.swift */,
 				3659FDF81DF19B2000D84C33 /* Info.plist */,
+				3659FE0A1DF1ADE500D84C33 /* RotorTests.swift */,
+				3659FE0E1DF1C3AC00D84C33 /* RotorArrayTests.swift */,
 			);
 			path = EnigmaKitTests;
 			sourceTree = "<group>";
@@ -148,6 +169,7 @@
 				TargetAttributes = {
 					3659FDE71DF19B2000D84C33 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					3659FDF01DF19B2000D84C33 = {
@@ -196,6 +218,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3659FE091DF1AB4D00D84C33 /* Rotor.swift in Sources */,
+				3659FE071DF1A2AF00D84C33 /* Substitutor.swift in Sources */,
+				3659FE051DF19E4500D84C33 /* Enigma.swift in Sources */,
+				3659FE0D1DF1B1FD00D84C33 /* RotorArray.swift in Sources */,
+				3659FE031DF19B5700D84C33 /* Encryptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3659FE0B1DF1ADE500D84C33 /* RotorTests.swift in Sources */,
+				3659FE0F1DF1C3AC00D84C33 /* RotorArrayTests.swift in Sources */,
 				3659FDF71DF19B2000D84C33 /* EnigmaKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +349,7 @@
 		3659FDFD1DF19B2000D84C33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -331,6 +361,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.prebeg.EnigmaKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -338,6 +369,7 @@
 		3659FDFE1DF19B2000D84C33 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -356,6 +388,7 @@
 		3659FE001DF19B2000D84C33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = EnigmaKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prebeg.EnigmaKitTests;
@@ -367,6 +400,7 @@
 		3659FE011DF19B2000D84C33 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = EnigmaKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.prebeg.EnigmaKitTests;
