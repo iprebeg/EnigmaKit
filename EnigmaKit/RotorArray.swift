@@ -25,7 +25,7 @@ class RotorArray : ReversibleSignalHandler {
         let a = read()
         //_ = rotors.reversed().reduce(true) { if ($0) { $1.rotate(); return $1.carry} else { return false}}
         let notches = rotors.map{ $0.carry }
-        print(notches)
+        //print(notches)
         //zip(rotors, notches).map{ if ($0.1) {$0.0.rotate()} }
         for i in 0 ... rotors.count - 2 {
             if (notches[i+1]) {
@@ -38,7 +38,7 @@ class RotorArray : ReversibleSignalHandler {
         if (leftState != rotors[0].read()) {
             rotors[1].rotate()
         }
-        print (a + " -> " + b)
+        //print (a + " -> " + b)
     }
     
     func setOffsets(s:Array<Character>) {
