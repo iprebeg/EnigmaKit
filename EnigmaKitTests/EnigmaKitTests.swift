@@ -9,9 +9,9 @@
 import XCTest
 @testable import EnigmaKit
 
-class EnigmaKitTests: XCTestCase {
+class EnigmaKitTest2s: XCTestCase {
     
-    var enigma: Enigma = Enigma()
+    //var enigma: Enigma = Enigma()
     
     override func setUp() {
         super.setUp()
@@ -27,7 +27,7 @@ class EnigmaKitTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        XCTAssertEqual(enigma.encrypt(src:"test"), "AAAA")
+        //XCTAssertEqual(enigma.encrypt(src:"test"), "AAAA")
     }
     
     func testPerformanceExample() {

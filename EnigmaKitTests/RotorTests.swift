@@ -14,11 +14,11 @@ import XCTest
 
 class RotorTests: XCTestCase {
     
-    var rotor: Rotor = Rotor(rotorInit:"NONE")
+    var rotor: Rotor!
     
     override func setUp() {
         super.setUp()
-        rotor = Rotor(rotorInit:"ABCD")
+        rotor = Rotor(rotor:"ABCD", offset:"A", notches:Array(arrayLiteral: "A"))
     }
     
     override func tearDown() {
@@ -33,19 +33,26 @@ class RotorTests: XCTestCase {
     
     func testRotor_readAndRotate_thenNextChar() {
         XCTAssertEqual(rotor.read(), "A")
-        XCTAssertEqual(rotor.readAndRotate(), "A")
-        XCTAssertEqual(rotor.readAndRotate(), "B")
-        XCTAssertEqual(rotor.readAndRotate(), "C")
+        XCTAssertEqual(rotor.read(), "A")
+        rotor.rotate()
+        XCTAssertEqual(rotor.read(), "B")
+        rotor.rotate()
+        XCTAssertEqual(rotor.read(), "C")
         XCTAssertFalse(rotor.carry)
     }
     
     func testRotor_readAndRotate_overTheRotorSize_thenStartOver() {
-        XCTAssertEqual(rotor.readAndRotate(), "A")
-        XCTAssertEqual(rotor.readAndRotate(), "B")
-        XCTAssertEqual(rotor.readAndRotate(), "C")
-        XCTAssertEqual(rotor.readAndRotate(), "D")
+        XCTAssertEqual(rotor.read(), "A")
+        rotor.rotate()
+        XCTAssertEqual(rotor.read(), "B")
+        rotor.rotate()
+        XCTAssertEqual(rotor.read(), "C")
+        rotor.rotate()
+        XCTAssertEqual(rotor.read(), "D")
+        rotor.rotate()
         XCTAssertTrue(rotor.carry)
-        XCTAssertEqual(rotor.readAndRotate(), "A")
+        XCTAssertEqual(rotor.read(), "A")
+        rotor.rotate()
         XCTAssertFalse(rotor.carry)
     }
     

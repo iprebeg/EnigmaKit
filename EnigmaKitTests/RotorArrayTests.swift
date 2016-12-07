@@ -13,14 +13,14 @@ import XCTest
 
 class RotorArrayTests: XCTestCase {
     
-    var rotorArray: RotorArray = RotorArray(rotorsInit:Array())
+    var rotorArray: RotorArray!
     
     override func setUp() {
         super.setUp()
         rotorArray = RotorArray(rotorsInit:Array(arrayLiteral:
-            Rotor(rotorInit:"ABC"),
-            Rotor(rotorInit:"DEF"),
-            Rotor(rotorInit:"GHI")
+            Rotor(rotor:"ABC", notches:Array(arrayLiteral:"C")),
+            Rotor(rotor:"ABCDEF", notches:Array(arrayLiteral:"E")),
+            Rotor(rotor:"ABCDEFGHI", notches:Array(arrayLiteral:"E"))
             
         ))
     }
@@ -30,34 +30,34 @@ class RotorArrayTests: XCTestCase {
     }
     
     func testRotorArray_readMultipleTimes_thenReturnSame() {
-        XCTAssertEqual(rotorArray.read(), "ADG")
-        XCTAssertEqual(rotorArray.read(), "ADG")
+        XCTAssertEqual(rotorArray.read(), "AAA")
+        XCTAssertEqual(rotorArray.read(), "AAA")
     }
     
     func testRotor_readAndRotate_thenNextChar() {
-        XCTAssertEqual(rotorArray.read(), "ADG")
-        XCTAssertEqual(rotorArray.readAndRotate(), "ADG")
-        XCTAssertEqual(rotorArray.readAndRotate(), "ADH")
-        XCTAssertEqual(rotorArray.readAndRotate(), "ADI")
+        XCTAssertEqual(rotorArray.read(), "AAA")
+        XCTAssertEqual(rotorArray.readAndRotate(), "AAA")
+        XCTAssertEqual(rotorArray.readAndRotate(), "AAB")
+        XCTAssertEqual(rotorArray.readAndRotate(), "AAC")
     }
     
     
     func testRotorArray_readAndRotate_overTheRotorSize_thenStartOver() {
-        XCTAssertEqual(rotorArray.readAndRotate(), "ADG")
-        XCTAssertEqual(rotorArray.readAndRotate(), "ADH")
-        XCTAssertEqual(rotorArray.readAndRotate(), "ADI")
+        XCTAssertEqual(rotorArray.readAndRotate(), "AAA")
+        XCTAssertEqual(rotorArray.readAndRotate(), "AAB")
+        XCTAssertEqual(rotorArray.readAndRotate(), "AAC")
         
-        XCTAssertEqual(rotorArray.readAndRotate(), "AEG")
-        XCTAssertEqual(rotorArray.readAndRotate(), "AEH")
-        XCTAssertEqual(rotorArray.readAndRotate(), "AEI")
+        XCTAssertEqual(rotorArray.readAndRotate(), "AAD")
+        XCTAssertEqual(rotorArray.readAndRotate(), "AAE")
+        XCTAssertEqual(rotorArray.readAndRotate(), "ABF")
         
-        XCTAssertEqual(rotorArray.readAndRotate(), "AFG")
-        XCTAssertEqual(rotorArray.readAndRotate(), "AFH")
-        XCTAssertEqual(rotorArray.readAndRotate(), "AFI")
+        XCTAssertEqual(rotorArray.readAndRotate(), "ABG")
+        XCTAssertEqual(rotorArray.readAndRotate(), "ABH")
+        XCTAssertEqual(rotorArray.readAndRotate(), "ABI")
         
-        XCTAssertEqual(rotorArray.readAndRotate(), "BDG")
-        XCTAssertEqual(rotorArray.readAndRotate(), "BDH")
-        XCTAssertEqual(rotorArray.readAndRotate(), "BDI")
+        XCTAssertEqual(rotorArray.readAndRotate(), "ABA")
+        XCTAssertEqual(rotorArray.readAndRotate(), "ABB")
+        XCTAssertEqual(rotorArray.readAndRotate(), "ABC")
     }
 
     func testPerformanceExample() {
