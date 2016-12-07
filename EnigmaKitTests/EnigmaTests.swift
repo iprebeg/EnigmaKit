@@ -13,98 +13,110 @@ import XCTest
 
 class EnigmaKitTests: XCTestCase {
     
-    var enigma: Enigma!
+    var enigmaM3: Enigma!
+    var enigmaM4: Enigma!
     
     override func setUp() {
         super.setUp()
-        enigma = Enigma.M3()
+        enigmaM3 = Enigma.M3()
+        enigmaM4 = Enigma.M4()
     }
     
     func testExample() {
-        XCTAssertEqual(enigma.signal(c: "A"), "B")
-        XCTAssertEqual(enigma.signal(c: "A"), "D")
-        XCTAssertEqual(enigma.signal(c: "A"), "Z")
+        XCTAssertEqual(enigmaM3.signal(c: "A"), "B")
+        XCTAssertEqual(enigmaM3.signal(c: "A"), "D")
+        XCTAssertEqual(enigmaM3.signal(c: "A"), "Z")
     }
     
     func testWhore() {
-        XCTAssertEqual(enigma.encrypt(s:"IAMALITTLEWHORE"),"HDKGULHRACCOPMS")
+        XCTAssertEqual(enigmaM3.encrypt(s:"IAMALITTLEWHORE"),"HDKGULHRACCOPMS")
     }
     
     func testWhoreRev() {
-        XCTAssertEqual(enigma.encrypt(s:"HDKGULHRACCOPMS"),"IAMALITTLEWHORE")
+        XCTAssertEqual(enigmaM3.encrypt(s:"HDKGULHRACCOPMS"),"IAMALITTLEWHORE")
     }
     
     func testWhoreOffset() {
-        enigma.setOffsets(s: "MDF")
-        XCTAssertEqual(enigma.encrypt(s:"IAMALITTLEWHORE"),"EVGLJDZGFMRCRUO")
+        enigmaM3.setOffsets(s: "MDF")
+        XCTAssertEqual(enigmaM3.encrypt(s:"IAMALITTLEWHORE"),"EVGLJDZGFMRCRUO")
     }
     
     func testWhoreRevOffset() {
-        enigma.setOffsets(s: "MDF")
-        XCTAssertEqual(enigma.encrypt(s:"EVGLJDZGFMRCRUO"),"IAMALITTLEWHORE")
+        enigmaM3.setOffsets(s: "MDF")
+        XCTAssertEqual(enigmaM3.encrypt(s:"EVGLJDZGFMRCRUO"),"IAMALITTLEWHORE")
     }
     
     func testWhoreSetting2() {
-        enigma.setSettings(s: "AAC")
-        XCTAssertEqual(enigma.encrypt(s:"IAMALITTLEWHORE"),"JUDDBQXRUYENLLL")
+        enigmaM3.setSettings(s: "AAC")
+        XCTAssertEqual(enigmaM3.encrypt(s:"IAMALITTLEWHORE"),"JUDDBQXRUYENLLL")
     }
     
     func testWhoreSetting2Rev() {
-        enigma.setSettings(s: "AAC")
-        XCTAssertEqual(enigma.encrypt(s:"JUDDBQXRUYENLLL"),"IAMALITTLEWHORE")
+        enigmaM3.setSettings(s: "AAC")
+        XCTAssertEqual(enigmaM3.encrypt(s:"JUDDBQXRUYENLLL"),"IAMALITTLEWHORE")
     }
     
     func testWhoreSetting() {
-        enigma.setSettings(s: "BCB")
-        //XCTAssertEqual(enigma.encrypt(s:"A"),"Z")
-        XCTAssertEqual(enigma.encrypt(s:"IAMALITTLEWHORE"),"GWCPUOUEDMAYQJM")
+        enigmaM3.setSettings(s: "BCB")
+        //XCTAssertEqual(enigmaM3.encrypt(s:"A"),"Z")
+        XCTAssertEqual(enigmaM3.encrypt(s:"IAMALITTLEWHORE"),"GWCPUOUEDMAYQJM")
     }
     
     func testWhoreRevSetting() {
-        enigma.setSettings(s: "BCB")
-        XCTAssertEqual(enigma.encrypt(s:"GWCPUOUEDMAYQJM"),"IAMALITTLEWHORE")
+        enigmaM3.setSettings(s: "BCB")
+        XCTAssertEqual(enigmaM3.encrypt(s:"GWCPUOUEDMAYQJM"),"IAMALITTLEWHORE")
     }
     
     func testBoth() {
-        enigma.setOffsets(s: "BDC")
-        enigma.setSettings(s: "CCB")
-        XCTAssertEqual(enigma.encrypt(s:"IAMALITTLEWHORE"),"ZJPRDOWEHMSKSNA")
+        enigmaM3.setOffsets(s: "BDC")
+        enigmaM3.setSettings(s: "CCB")
+        XCTAssertEqual(enigmaM3.encrypt(s:"IAMALITTLEWHORE"),"ZJPRDOWEHMSKSNA")
     }
     
     func testBothRev() {
-        enigma.setOffsets(s: "BDC")
-        enigma.setSettings(s: "CCB")
-        XCTAssertEqual(enigma.encrypt(s:"ZJPRDOWEHMSKSNA"),"IAMALITTLEWHORE")
+        enigmaM3.setOffsets(s: "BDC")
+        enigmaM3.setSettings(s: "CCB")
+        XCTAssertEqual(enigmaM3.encrypt(s:"ZJPRDOWEHMSKSNA"),"IAMALITTLEWHORE")
     }
     
     func testOMNOM() {
-        enigma.setOffsets(s: "ADU")
+        enigmaM3.setOffsets(s: "ADU")
         let s = "UNDE"
         let r = "SOES"
-        XCTAssertEqual(enigma.encrypt(s:s),r)
+        XCTAssertEqual(enigmaM3.encrypt(s:s),r)
     }
     
     func testLongTestNoSettings() {
-        enigma.setOffsets(s: "BDC")
+        enigmaM3.setOffsets(s: "BDC")
         let s = "UNDERSTANDINGTHEWAYTHEMACHINEENCRYPTSREQUIRESTAKINGINTOACCOUNTTHECURRENTPOSITIONOFEACHROTORTHERINGSETTINGANDITSINTERNALWIRING"
         let r = "OBPXBCMUZXGPUFYFUMIJGJYQTCYLGHYKVQBNTYGDFWYTQCEQHMNOJWAZFAFASAETTTJGISYWHYAWOLVCTVYXWLVSHCBWXXKNWEQBIHWFRJIKBOMBLMKACNDGFMDKA"
-        XCTAssertEqual(enigma.encrypt(s:s),r)
+        XCTAssertEqual(enigmaM3.encrypt(s:s),r)
         
     }
     
     func testLongTest() {
-        enigma.setOffsets(s: "BDC")
-        enigma.setSettings(s: "CCB")
+        enigmaM3.setOffsets(s: "BDC")
+        enigmaM3.setSettings(s: "CCB")
         let s = "UNDERSTANDINGTHEWAYTHEMACHINEENCRYPTSREQUIRESTAKINGINTOACCOUNTTHECURRENTPOSITIONOFEACHROTORTHERINGSETTINGANDITSINTERNALWIRING"
         let r = "PQLMKMWHGPKCJLQGLCXLMDQSBJLPBHQBNEOKOOWNLBGQQOQLXZUKTYVOGPDMYOZMCVYZPNZQYMIXBKZZAHBPOBBUHDXHVMWRAALQMJQBIQBLHJMNQJZEQFKCHFJXN"
-        XCTAssertEqual(enigma.encrypt(s:s),r)
+        XCTAssertEqual(enigmaM3.encrypt(s:s),r)
     }
     
     func testLongTestRev() {
-        enigma.setOffsets(s: "BDC")
-        enigma.setSettings(s: "CCB")
+        enigmaM3.setOffsets(s: "BDC")
+        enigmaM3.setSettings(s: "CCB")
         let s = "PQLMKMWHGPKCJLQGLCXLMDQSBJLPBHQBNEOKOOWNLBGQQOQLXZUKTYVOGPDMYOZMCVYZPNZQYMIXBKZZAHBPOBBUHDXHVMWRAALQMJQBIQBLHJMNQJZEQFKCHFJXN"
         let r = "UNDERSTANDINGTHEWAYTHEMACHINEENCRYPTSREQUIRESTAKINGINTOACCOUNTTHECURRENTPOSITIONOFEACHROTORTHERINGSETTINGANDITSINTERNALWIRING"
-        XCTAssertEqual(enigma.encrypt(s:s),r)
+        XCTAssertEqual(enigmaM3.encrypt(s:s),r)
     }
+    
+    func testLongTestM4() {
+        enigmaM4.setOffsets(s: "DBDC")
+        enigmaM4.setSettings(s: "DCCB")
+        let s = "UNDERSTANDINGTHEWAYTHEMACHINEENCRYPTSREQUIRESTAKINGINTOACCOUNTTHECURRENTPOSITIONOFEACHROTORTHERINGSETTINGANDITSINTERNALWIRING"
+        let r = "PQLMKMWHGPKCJLQGLCXLMDQSBJLPBHQBNEOKOOWNLBGQQOQLXZUKTYVOGPDMYOZMCVYZPNZQYMIXBKZZAHBPOBBUHDXHVMWRAALQMJQBIQBLHJMNQJZEQFKCHFJXN"
+        XCTAssertEqual(enigmaM4.encrypt(s:s),r)
+    }
+    
+    
 }

@@ -54,6 +54,18 @@ class Enigma : SignalHandler {
             reflector:Reflector.REFLECTOR_B(),
             plugboard:Plugboard.NONE())
     }
+    
+    static func M4() -> (Enigma) {
+        return Enigma(
+            rotorArray:RotorArray(rotorsInit: Array(arrayLiteral:
+                Rotor.ROTOR_BETA(),
+                Rotor.ROTOR_I(),
+                Rotor.ROTOR_II(),
+                Rotor.ROTOR_III()
+            )),
+            reflector:Reflector.REFLECTOR_B_THIN(),
+            plugboard:Plugboard.NONE())
+    }
 }
 
 struct Constants {
