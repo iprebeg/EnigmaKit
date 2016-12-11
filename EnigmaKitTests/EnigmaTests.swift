@@ -118,5 +118,14 @@ class EnigmaKitTests: XCTestCase {
         XCTAssertEqual(enigmaM4.encrypt(s:s),r)
     }
     
+    func testLongTestPlugboardM4() {
+        enigmaM4.setOffsets(s: "DBDC")
+        enigmaM4.setSettings(s: "DCCB")
+        enigmaM4.setPlugboard(plugboard:Plugboard(plugboard:["A" : "F", "R" : "G"]))
+        let s = "UNDERSTANDINGTHEWAYTHEMACHINEENCRYPTSREQUIRESTAKINGINTOACCOUNTTHECURRENTPOSITIONOFEACHROTORTHERINGSETTINGANDITSINTERNALWIRING"
+        let r = "PQLMHMWYRPKCVLQRLVXLMDQRBJLPBHQBHEOKOJWNLBGQQOTLXZCKTYVHRPDMYOZMCVYITNZQYMIXBKZZFNBTOBIUHDHHVMHGFCLQMJQBYYBLHJMNQJZBQFKCHXJXX"
+        XCTAssertEqual(enigmaM4.encrypt(s:s),r)
+    }
+    
     
 }

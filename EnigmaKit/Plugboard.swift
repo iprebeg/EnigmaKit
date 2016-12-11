@@ -16,6 +16,17 @@ class Plugboard : ReversibleSignalHandler {
         mapper = AlphaMapper(alphaStatic: Constants.ALPHABET, alphaRot:plugboard)
     }
     
+    init(plugboard:Dictionary<Character, Character>) {
+        var s:String = Constants.ALPHABET;
+        for (k,v) in plugboard {
+            let ki = s.range(of: String(k))!
+            let vi = s.range(of: String(v))!
+            s.replaceSubrange(ki, with: String(v))
+            s.replaceSubrange(vi, with: String(k))
+        }
+        mapper = AlphaMapper(alphaStatic: Constants.ALPHABET, alphaRot:s)
+    }
+    
     func signal(c: Character) -> (Character) {
         return mapper.map(c: c)
     }

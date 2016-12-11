@@ -44,6 +44,10 @@ class Enigma : SignalHandler {
         rotorArray.setSettings(s: Array(s.characters))
     }
     
+    func setPlugboard(plugboard:Plugboard) {
+        self.plugboard = plugboard
+    }
+    
     static func M3() -> (Enigma) {
         return Enigma(
             rotorArray:RotorArray(rotorsInit: Array(arrayLiteral:
