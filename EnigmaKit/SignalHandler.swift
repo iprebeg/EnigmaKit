@@ -1,5 +1,5 @@
 //
-//  Substitutor.swift
+//  SignalHandler.swift
 //  EnigmaKit
 //
 //  Created by Prebeg, Ivor on 02/12/2016.
