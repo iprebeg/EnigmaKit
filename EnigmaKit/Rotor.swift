@@ -41,7 +41,7 @@ class Rotor : ReversibleSignalHandler  {
         offset += 1
         offset %= length
         
-        if (notches.contains(alphaMapper.read(at: offset).sub(val: 0, alphaSize: 26)) ) {
+        if (notches.contains(alphaMapper.read(at: offset).sub(val: 0, alphaSize: length)) ) {
             carry = true
         } else {
             carry = false
