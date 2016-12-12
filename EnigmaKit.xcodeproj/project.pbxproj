@@ -22,7 +22,6 @@
 		3659FE1B1DF2E3E600D84C33 /* AlphaMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659FE1A1DF2E3E600D84C33 /* AlphaMapper.swift */; };
 		3659FE1D1DF3252300D84C33 /* AlphaMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3659FE1C1DF3252300D84C33 /* AlphaMapperTests.swift */; };
 		368C74CD1DF4C67C00DAAD78 /* ReflectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368C74CC1DF4C67C00DAAD78 /* ReflectorTests.swift */; };
-		368C74CF1DF4D1D800DAAD78 /* example.txt in Resources */ = {isa = PBXBuildFile; fileRef = 368C74CE1DF4D1D800DAAD78 /* example.txt */; };
 		368C74D11DF4F5E600DAAD78 /* Character+AlphaIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368C74D01DF4F5E600DAAD78 /* Character+AlphaIndex.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +54,6 @@
 		3659FE1A1DF2E3E600D84C33 /* AlphaMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaMapper.swift; sourceTree = "<group>"; };
 		3659FE1C1DF3252300D84C33 /* AlphaMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphaMapperTests.swift; sourceTree = "<group>"; };
 		368C74CC1DF4C67C00DAAD78 /* ReflectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReflectorTests.swift; path = EnigmaKitTests/ReflectorTests.swift; sourceTree = SOURCE_ROOT; };
-		368C74CE1DF4D1D800DAAD78 /* example.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.txt; sourceTree = "<group>"; };
 		368C74D01DF4F5E600DAAD78 /* Character+AlphaIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Character+AlphaIndex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +106,6 @@
 				3659FE081DF1AB4D00D84C33 /* Rotor.swift */,
 				3659FE141DF1DCD900D84C33 /* Reflector.swift */,
 				3659FE1A1DF2E3E600D84C33 /* AlphaMapper.swift */,
-				368C74CE1DF4D1D800DAAD78 /* example.txt */,
 				368C74D01DF4F5E600DAAD78 /* Character+AlphaIndex.swift */,
 			);
 			path = EnigmaKit;
@@ -222,7 +219,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				368C74CF1DF4D1D800DAAD78 /* example.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

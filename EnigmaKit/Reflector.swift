@@ -17,9 +17,7 @@ class Reflector : SignalHandler {
     }
     
     func signal(c: Character) -> (Character) {
-        let r = mapper.map(c: c)
-        //print("REF> " + String(c) + " -> " + String(r))
-        return r
+        return mapper.map(c: c)
     }
 
     static func REFLECTOR_A() -> (Reflector) {

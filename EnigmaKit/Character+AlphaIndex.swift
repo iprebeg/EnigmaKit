@@ -40,7 +40,6 @@ extension Character {
     }
     
     func sub(val:Int, alphaSize:Int) -> Character {
-        //print ("self:" + String(self) + " val:" + String(val) + " alphaSize: " + String(alphaSize))
         return Character.fromAlphaIndex(idx: (self.alphaIndex - val + alphaSize) % alphaSize)
     }
 }

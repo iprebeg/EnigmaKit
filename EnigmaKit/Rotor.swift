@@ -11,12 +11,10 @@ import Foundation
 class Rotor : ReversibleSignalHandler  {
     
     private var alphaMapper:AlphaMapper
-    
     private var offset:Int
     private var setting:Int
     private var notches:Array<Character>
     private(set) var carry:Bool = false
-    
     private var length:Int!
     
     init(rotor:String, offset:Character = "A", setting:Character = "A", notches:Array<Character>) {
@@ -24,7 +22,7 @@ class Rotor : ReversibleSignalHandler  {
         self.offset = offset.alphaIndex
         self.setting = setting.alphaIndex
         self.length = rotor.characters.count
-        self.notches = notches//.map{$0.add(val: 1, alphaSize: rotor.characters.count)}
+        self.notches = notches
     }
     
     func setOffset(offset:Character) {
@@ -40,30 +38,22 @@ class Rotor : ReversibleSignalHandler  {
     }
     
     func rotate() {
-
         offset += 1
         offset %= length
         
-        //if (offset == 0) { carry = true } else { carry = false }
         if (notches.contains(alphaMapper.read(at: offset).sub(val: 0, alphaSize: 26)) ) {
             carry = true
         } else {
             carry = false
         }
-        
-
     }
     
     func signal(c: Character) -> (Character) {
-        let r = Character.fromAlphaIndex(idx: (alphaMapper.map(c: Character.fromAlphaIndex(idx:(c.alphaIndex + offset) % length), offset: setting).alphaIndex - offset + length) % length)
-        //print("Rotor> " + String(c) + " -> " + String(r))
-        return r
+        return Character.fromAlphaIndex(idx: (alphaMapper.map(c: Character.fromAlphaIndex(idx:(c.alphaIndex + offset) % length), offset: setting).alphaIndex - offset + length) % length)
     }
     
     func signalReverse(c: Character) -> (Character) {
-        let r = Character.fromAlphaIndex(idx: (alphaMapper.maprev(c: Character.fromAlphaIndex(idx: (c.alphaIndex + offset) % length), offset: setting).alphaIndex - offset + length) % length)
-        //print("Rotor< " + String(c) + " -> " + String(r))
-        return r
+        return Character.fromAlphaIndex(idx: (alphaMapper.maprev(c: Character.fromAlphaIndex(idx: (c.alphaIndex + offset) % length), offset: setting).alphaIndex - offset + length) % length)
     }
     
     static func ROTOR_I() -> (Rotor) {

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SignalHandler {
-    func signal (c:Character) -> (Character)
+    func signal(c:Character) -> (Character)
 }
 
 protocol ReversibleSignalHandler : SignalHandler {
